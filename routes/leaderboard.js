@@ -10,16 +10,10 @@ const dbCollection = process.env.MONGO_COLLECTION;
 const databaseAndCollection = {db: db, collection: dbCollection};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-router.get("/", (request, response) => {
-    response.render("leaderboard");
-});
-
-
-router.post("/", async function(request, response) {
+/* Get Name and Age from db and display in a table */
+router.get("/", async function(request, response) {
     const uri = `mongodb+srv://${userName}:${password}@cluster0.oe2gw.mongodb.net/${db}?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-    // let {fName, age} = request.body;
 
     try {
         await client.connect();
@@ -39,6 +33,7 @@ router.post("/", async function(request, response) {
     }
 });
 
+/* Look up all data in db */
 async function lookUpMany(client, databaseAndCollection) {
     let filter = {};
     const cursor = client.db(databaseAndCollection.db)
