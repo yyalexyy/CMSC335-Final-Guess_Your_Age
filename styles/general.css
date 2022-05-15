@@ -20,7 +20,8 @@ body {
   /* max-width: fit-content; */
 }
 
-.btn {
+a {
+  /* Button style */
   display: inline-block;
   outline: 0;
   border: 0;
@@ -34,24 +35,11 @@ body {
   text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
   background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
   transition: all 0.5s ease 0s;
-  position: relative;
 }
-
-.btn:hover {
+a:hover {
   box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
   transition: all 0.1s ease 0s;
 }
-
-a {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-
-  color: #fff;
-}
 a:link { 
-  text-decoration: none; 
+  text-decoration: none;  /* Remove underline */
 }

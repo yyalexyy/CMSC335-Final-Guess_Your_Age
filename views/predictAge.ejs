@@ -13,14 +13,14 @@
     <h1>Gather Information</h1>
 
     <div>
-        <form action="http://localhost:5000/processAge" method="post">
+        <form action="http://localhost:5000/processAge" method="post" onsubmit="return ">
             <fieldset>
                 <br/>
                 <label for="fName"><strong>First Name: </strong></label>
-                <input type="text" id="fName" name="fName">
+                <input type="text" id="fName" name="fName" required>
                 <br/><br/>
                 <label for="lName"><strong>Last Name: </strong></label>
-                <input type="text" id="lName" name="lName">
+                <input type="text" id="lName" name="lName" required>
                 <br/><br/>
                 
                 <label for="backgroundInformation"><strong>Background Information: </strong></label>
