@@ -17,10 +17,11 @@ router.get("/", async function(request, response) {
 
     try {
         await client.connect();
-        const res = await lookUpMany(client, databaseAndCollection);
+        const result = await lookUpMany(client, databaseAndCollection);
 
+        let sorted = result.sort((a,b) => b.age-a.age)
         let tableBody = "";
-        res.forEach(ele => tableBody += `<tr><td>${ele.name}</td><td>${ele.age}</td></tr>`);
+        sorted.forEach((ele, index) => tableBody += `<tr><td>${index+1}</td><td>${ele.name}</td><td>${ele.age}</td></tr>`);
 
         let variable = {
             userBody: tableBody
