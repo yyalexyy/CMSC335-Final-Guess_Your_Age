@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/leaderboard.css">
+    <title>Leaderboard</title>
+</head>
+
+<body>
+    <div class="board">
+        <h1>Leaderboard</h1>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+
+            <%- userBody %>
+        </table>
+    </div>
+    <br/>
+    
+    <div class="btn">
+        <a href="http://localhost:<%- portNumber %>">HOME</a>
+    </div>
+
+</body>
+</html>

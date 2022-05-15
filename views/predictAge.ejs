@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/predictAge.css">
+    <script src="../api/agifyAPI.js" defer></script>
+    <title>Predict Age</title>
+</head>
+
+<body>
+    <h1>Gather Information</h1>
+
+    <div>
+        <form action="" method="post" onsubmit="return getName()">
+            <fieldset>
+                <br/>
+                <label for="fName"><strong>First Name: </strong></label>
+                <input type="text" id="fName" name="fName">
+                <br/><br/>
+                <label for="lName"><strong>Last Name: </strong></label>
+                <input type="text" id="lName" name="lName">
+                <br/><br/>
+                
+                <label for="backgroundInformation"><strong>Background Information: </strong></label>
+                <br/>
+                <textarea id="backgroundInformation" name="backgroundInformation" rows="6" cols="50"></textarea>
+                <br/>
+
+                <input type="reset">
+                <input type="submit" value="Predict My Age">
+            </fieldset>
+        </form>
+
+    </div>
+    <br>
+
+    <div class="btn">
+        <a href="http://localhost:<%- portNumber %>">HOME</a>
+    </div>
+</body>
+</html>

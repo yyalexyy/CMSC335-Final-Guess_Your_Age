@@ -1,0 +1,19 @@
+{
+  "name": "guessmyname",
+  "version": "1.0.0",
+  "description": "A webapp to guess your age",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Alex & Mike",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "node-fetch": "^2.0.0"
+  }
+}
