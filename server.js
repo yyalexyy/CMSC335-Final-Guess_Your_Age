@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 
 app.use(bodyParser.urlencoded({extended:false}));
 
-const portNumber = 3000;
+let portNumber = process.env.PORT || 5000;
 app.locals.portNumber = portNumber;
 
 process.stdout.write(`Web server started and running at http://localhost:${portNumber}\n`);
