@@ -46,3 +46,9 @@ a:hover {
 a:link {
     text-decoration: none; /* Remove underline */
 }
+
+.centerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
