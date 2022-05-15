@@ -1,4 +1,7 @@
 .leaderboardTable {
+    display: block;
+    max-height: 255px;
+    overflow-y: scroll;
     background-color: #fff;
 }
 

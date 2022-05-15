@@ -9,7 +9,7 @@ const dbCollection = process.env.MONGO_COLLECTION;
 
 /* Our database and collection */
 const databaseAndCollection = {db: db, collection: dbCollection};
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const {MongoClient, ServerApiVersion} = require('mongodb');
 
 /* Display predictAge page */
 router.get("/", (request, response) => {
@@ -17,14 +17,18 @@ router.get("/", (request, response) => {
 });
 
 /* Save name and age into db */
-router.post("/", async function(request, response) {
-    
-    let {fName, lName, backgroundInformation} =  request.body;
+router.post("/", async function (request, response) {
+
+    let {fName, lName, backgroundInformation} = request.body;
     const age = await AGIFY_API_GET(fName);
 
 
     const uri = `mongodb+srv://${userName}:${password}@cluster0.oe2gw.mongodb.net/${db}?retryWrites=true&w=majority`;
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    const client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        serverApi: ServerApiVersion.v1
+    });
 
     let user = {
         name: fName + " " + lName,
@@ -45,23 +49,26 @@ router.post("/", async function(request, response) {
 /* Inser user to db */
 async function insertApplicant(client, databaseAndCollection, user) {
     await client.db(databaseAndCollection.db)
-            .collection(databaseAndCollection.collection)
-            .insertOne(user);
+        .collection(databaseAndCollection.collection)
+        .insertOne(user);
 }
 
 
 /* Pass in name and fetch age from AGIFY API */
 const fetch = require('node-fetch');
+
 async function AGIFY_API_GET(name) {
     let age;
 
     await fetch(`https://api.agify.io?name=${name}`)
         .then(response => response.json())
-        .then(json => {age = json.age})
+        .then(json => {
+            age = json.age
+        })
         .catch(error => console.log("Error: " + error));
 
     // if age is null, we generate a random number btw 1 (inclusive) ~ 101 (exclusive)
-    if(age === null) {
+    if (age === null) {
         age = Math.random() * (101 - 1) + 1;
     }
 

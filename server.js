@@ -1,10 +1,9 @@
-
 const path = require("path");
 const bodyParser = require("body-parser");
 const express = require("express");
 let app = express();
 
-require("dotenv").config({ path: path.resolve(__dirname, 'credentials/.env') });
+require("dotenv").config({path: path.resolve(__dirname, 'credentials/.env')});
 
 const predictAge = require("./routes/predictAge");
 const leaderboard = require("./routes/leaderboard");
@@ -15,7 +14,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(__dirname));
 
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 let portNumber = process.env.PORT || 5000;
 app.locals.portNumber = portNumber;
