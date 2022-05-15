@@ -22,6 +22,7 @@ body {
 
 a {
     /* Button style */
+    text-align: center;
     display: inline-block;
     outline: 0;
     border: 0;
